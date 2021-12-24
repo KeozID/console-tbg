@@ -9,7 +9,7 @@ build = str("v.1.3")
 sv_folder = str("ctbg_savedata/")
 sv_folder_dir = re.sub('/', '', sv_folder)
 
-def check():
+def start():
     global sv_folder
     global sv_folder_dir
     sv_folder_check_start = time.time()
@@ -297,4 +297,4 @@ class main:
 
 
 if __name__ == "__main__":
-    check()
+    start()
