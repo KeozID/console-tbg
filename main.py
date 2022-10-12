@@ -4,7 +4,9 @@ import pickle
 import os
 import re
 
-build = str("v.1.3")
+build = str("v.1.4")
+header = str("──────────────────────────────────────────────────────────────────────────────<")
+short_header = header[:42] + str("<")
 
 sv_folder = str("ctbg_savedata/")
 sv_folder_dir = re.sub('/', '', sv_folder)
@@ -56,7 +58,7 @@ class main:
     t_time = int(1) #Wait time for turn and input respond
 
     def main():
-        print("──────────────────────────────────────────────────────────────────────────────<")
+        print(header)
         print("[A]Battle, [B]Status, [C]Training Area, [D]Save Data, [E]Load Data, [QUIT]Quit")
         loop = True
         while loop == True:
@@ -75,7 +77,7 @@ class main:
                 
             if main_input == "b":
                 print("")
-                print("──────────────────────────────────────────<")
+                print(short_header)
                 print(f"Level: {player.level}")
                 print(f"Balance: {player.balance}")
                 print(f"Potion of Healing: {main.potion_token}")
@@ -86,11 +88,11 @@ class main:
                 print(f"Win: {main.win}")
                 print(f"Lose: {main.lose}")
                 print(f"Winrate(%): {main.win / (main.win+main.lose)}%")
-                print("──────────────────────────────────────────<")
+                print(short_header)
                 print("")
 
             if main_input == "c":
-                print("─────────────────────────────────────────────────────────────────<")
+                print(header)
                 print("[A]Train, [B]Buy Healing Potion, [C]Buy Defense Token, [BACK]Back")
                 loop = True
                 while loop == True:
@@ -209,7 +211,7 @@ class main:
             enemy.level += int(1)
         # ─────────────────────────────────────────────────────────────────
 
-        print("────────────────────────────────────────<")
+        print(header)
         print("[A]Attack, [B]Defend, [C]Healing Potion")
         loop = True
         while loop == True:
